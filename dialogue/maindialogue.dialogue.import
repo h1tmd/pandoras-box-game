@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cl3fomkuofs6q"
+path="res://.godot/imported/maindialogue.dialogue-d66d7c2ea89970f8eb7b9cc51a20020d.tres"
+
+[deps]
+
+source_file="res://dialogue/maindialogue.dialogue"
+dest_files=["res://.godot/imported/maindialogue.dialogue-d66d7c2ea89970f8eb7b9cc51a20020d.tres"]
+
+[params]
+
+defaults=true

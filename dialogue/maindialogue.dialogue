@@ -1,0 +1,67 @@
+~ rand1
+Random Mage: You look new!
+Random Mage: Where did you come from?
+Random Mage: Huh, never heard that place before...
+Random Mage: What magic can you do?
+Random Mage: Wait... Is that really all you can do? Creating mushroom on grass?
+Random Mage: Well... I guess that's pretty good for a beginner.
+Random Mage: Oh. you want to become powerful?
+Random Mage: It's just between you and me but I heard that there's a powerful power in the dungeon not far from here.
+Random Mage: Why not get the bo- power when you get the chance?
+=> END
+
+~ rand2
+Random Mage: Well, what are you waiting for? Go get them!
+=> END
+
+~ farmer1
+Farmer: Watch out! there are some enemies ahead.
+Farmer: They always gather near that cave as if protecting something.
+Farmer: I wouldn't go there if I were you.
+=> END
+
+~ farmer2
+Farmer: Care to help me plant potatoes?
+=> END
+
+~ guard
+Dungeon Guard: Oi! Why are you here? 
+Dungeon Guard: You look like an adventurer. Well, you know the rules. ID and registration.
+Dungeon Guard: YOU DON'T HAVE ONE!?
+Dungeon Guard: I guess it's fine, you look new after all. Especially with those shabby shoes of yours.
+Dungeon Guard: Well, at least don't go into the last room, I think you know why.
+=> END
+
+~ guard2
+Dungeon Guard: Just go, I'll pretend I didn't see you. Not worth the paperwork.
+=> END
+
+~ janitor
+Janitor: I have been here for quite a while...
+Janitor: Can't get enough of the dust laying around here.
+Janitor: But did you know dust can actually kill you.
+Janitor: It killed my cousin, well then again... it was a sack of dirt.
+Janitor: Dirt is like dust right?
+Janitor: Well, I believe it's like dust.
+Janitor: But then again, if you make dirt bigger, it would become stone.
+Janitor: That would be hard to clean as it would be heavy for me.
+Janitor: You think that just because I clean things I'm strong.
+Janitor: I'm quite good with words too.
+Janitor: Well that would be a lie, I'm not that good with words.
+Janitor: I'm too busy cleaning because you know, I'm a cleaner.
+Janitor: wHaT yOu sEeK iS a LiE ;)
+Janitor: But what would I know. I'm too busy cleaning.
+Janitor: I sometimes would find coins and stuff.
+Janitor: But that doesn't really matter.
+Janitor: I got food and water at home and that is already something to be happy about.
+=> END
+
+~ boss
+The mage from the beginning: OH THANK YOU FOR BEING SO GULLIBLE!
+The mage from the beginning: You released my master from his chains and is now going to rule the-
+=> END
+
+~ endcredit
+"With the Evil Wizard finally being defeated, the townspeople thank you and sing you praises. You went home and got a good night sleep" 
+"What Adventure awaits you next?"
+=> END!
