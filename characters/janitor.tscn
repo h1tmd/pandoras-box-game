@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhypdw1rucf46"]
+
+[ext_resource type="Texture2D" uid="uid://dslnbjiego4f3" path="res://assets/npcs/janitor_idle1.png" id="1_qpbdv"]
+[ext_resource type="Texture2D" uid="uid://cl6wlm5wu0xcf" path="res://assets/npcs/janitor_idle2.png" id="2_6oixw"]
+[ext_resource type="Script" path="res://characters/janitor.gd" id="3_wjsss"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w73sx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qpbdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6oixw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ams5n"]
+size = Vector2(530, 378)
+
+[node name="Janitor" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_w73sx")
+autoplay = "default"
+frame_progress = 0.888898
+script = ExtResource("3_wjsss")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-121, 0)
+shape = SubResource("RectangleShape2D_ams5n")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

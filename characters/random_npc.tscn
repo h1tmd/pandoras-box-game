@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://h2s2rkd0gx4a"]
+
+[ext_resource type="Shader" path="res://others/npc.gdshader" id="1_p3ws3"]
+[ext_resource type="Texture2D" uid="uid://clx3e3be5oujj" path="res://assets/npcs/random_idle1.png" id="2_cy1ck"]
+[ext_resource type="Texture2D" uid="uid://bsy3bi4s2i131" path="res://assets/npcs/random_idle2.png" id="3_8g5r4"]
+[ext_resource type="Script" path="res://characters/random_npc.gd" id="4_ot1gu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_10yso"]
+shader = ExtResource("1_p3ws3")
+shader_parameter/line_color = Color(1, 1, 1, 0)
+shader_parameter/line_thickness = 4.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6bl0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cy1ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8g5r4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmnbu"]
+size = Vector2(530, 378)
+
+[node name="Random NPC" type="AnimatedSprite2D"]
+material = SubResource("ShaderMaterial_10yso")
+sprite_frames = SubResource("SpriteFrames_c6bl0")
+autoplay = "default"
+frame_progress = 0.226268
+script = ExtResource("4_ot1gu")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-121, 0)
+shape = SubResource("RectangleShape2D_tmnbu")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

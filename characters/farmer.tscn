@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2112im6mnply"]
+
+[ext_resource type="Shader" path="res://others/npc.gdshader" id="1_0ngg0"]
+[ext_resource type="Texture2D" uid="uid://btkr8bkab5a2k" path="res://assets/npcs/farmer_idle1.png" id="1_gliqi"]
+[ext_resource type="Texture2D" uid="uid://cqykrtmqd3il7" path="res://assets/npcs/farmer_idle2.png" id="2_ej5li"]
+[ext_resource type="Script" path="res://characters/farmer.gd" id="3_2cf5m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8row"]
+shader = ExtResource("1_0ngg0")
+shader_parameter/line_color = Color(1, 1, 1, 0)
+shader_parameter/line_thickness = 4.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e8ayg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gliqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ej5li")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ttux"]
+size = Vector2(530, 378)
+
+[node name="Farmer" type="AnimatedSprite2D"]
+material = SubResource("ShaderMaterial_o8row")
+sprite_frames = SubResource("SpriteFrames_e8ayg")
+autoplay = "default"
+frame_progress = 0.472596
+script = ExtResource("3_2cf5m")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-121, 0)
+shape = SubResource("RectangleShape2D_4ttux")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
