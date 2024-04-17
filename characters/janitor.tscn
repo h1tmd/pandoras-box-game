@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhypdw1rucf46"]
+[gd_scene load_steps=8 format=3 uid="uid://dhypdw1rucf46"]
 
+[ext_resource type="Shader" path="res://others/npc.gdshader" id="1_743b2"]
 [ext_resource type="Texture2D" uid="uid://dslnbjiego4f3" path="res://assets/npcs/janitor_idle1.png" id="1_qpbdv"]
 [ext_resource type="Texture2D" uid="uid://cl6wlm5wu0xcf" path="res://assets/npcs/janitor_idle2.png" id="2_6oixw"]
 [ext_resource type="Script" path="res://characters/janitor.gd" id="3_wjsss"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i7f85"]
+shader = ExtResource("1_743b2")
+shader_parameter/line_color = Color(1, 1, 1, 0)
+shader_parameter/line_thickness = 4.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w73sx"]
 animations = [{
@@ -22,9 +28,10 @@ animations = [{
 size = Vector2(530, 378)
 
 [node name="Janitor" type="AnimatedSprite2D"]
+material = SubResource("ShaderMaterial_i7f85")
 sprite_frames = SubResource("SpriteFrames_w73sx")
 autoplay = "default"
-frame_progress = 0.888898
+frame_progress = 0.30471
 script = ExtResource("3_wjsss")
 
 [node name="Area2D" type="Area2D" parent="."]

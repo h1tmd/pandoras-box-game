@@ -17,7 +17,7 @@ func _on_area_2d_body_exited(body):
 		material.set_shader_parameter("line_color", Color.TRANSPARENT)
 
 
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if Input.is_action_just_pressed("interact") and player_in:
 		if not interacted:
 			dialogue.emit("rand1")

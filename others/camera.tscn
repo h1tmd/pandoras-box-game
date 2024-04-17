@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7xc1uatkd4da"]
+
+[ext_resource type="Script" path="res://others/camera.gd" id="1_c8wf7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo1ot"]
+size = Vector2(5, 1568)
+
+[node name="Camera2D" type="Camera2D"]
+anchor_mode = 0
+position_smoothing_enabled = true
+script = ExtResource("1_c8wf7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2.5, 414)
+shape = SubResource("RectangleShape2D_eo1ot")
