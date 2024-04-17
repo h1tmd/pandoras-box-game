@@ -1,12 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1ygqvanrtqr5"]
+[gd_scene load_steps=17 format=3 uid="uid://b1ygqvanrtqr5"]
 
 [ext_resource type="Script" path="res://characters/pandora.gd" id="1_tedb2"]
 [ext_resource type="Texture2D" uid="uid://dfhihimprye5d" path="res://assets/pandora/pandora_idle1.png" id="1_xe7uu"]
 [ext_resource type="Texture2D" uid="uid://hgkv8onuxxfk" path="res://assets/pandora/pandora_idle2.png" id="2_sb0f4"]
 [ext_resource type="Texture2D" uid="uid://mbiacwr6u44e" path="res://assets/pandora/pandora_walk1.png" id="3_6ckyn"]
+[ext_resource type="Texture2D" uid="uid://dy4grdq1w5pi6" path="res://assets/pandora/pandora_spell1.png" id="4_tecvg"]
 [ext_resource type="Texture2D" uid="uid://c0i5rfbebjlgt" path="res://assets/pandora/pandora_walk2.png" id="4_u1yvr"]
+[ext_resource type="Texture2D" uid="uid://swo81c5u3g82" path="res://assets/pandora/pandora_spell2.png" id="5_dsw0u"]
 [ext_resource type="Texture2D" uid="uid://b785rn2otny5c" path="res://assets/pandora/pandora_walk3.png" id="5_wyd7c"]
+[ext_resource type="Texture2D" uid="uid://b6n40rwwwc1c0" path="res://assets/pandora/pandora_spell3.png" id="6_7bq8b"]
 [ext_resource type="Texture2D" uid="uid://4bw0v6o7gk57" path="res://assets/pandora/pandora_walk4.png" id="6_wvqbu"]
+[ext_resource type="Texture2D" uid="uid://belgpr0w3yi5u" path="res://assets/pandora/pandora_spell4.png" id="7_nwgr8"]
+[ext_resource type="Texture2D" uid="uid://b7tbrtfpo76mw" path="res://assets/pandora/pandora_spell5.png" id="8_stg7m"]
+[ext_resource type="Texture2D" uid="uid://yp7odljpvifv" path="res://assets/pandora/pandora_spell7.png" id="9_xwhl4"]
+[ext_resource type="Texture2D" uid="uid://bqvt2sgdo5p0s" path="res://assets/pandora/pandora_spell6.png" id="10_qsdmw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_27f86"]
 animations = [{
@@ -20,6 +27,32 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_tecvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dsw0u")
+}, {
+"duration": 1.2,
+"texture": ExtResource("6_7bq8b")
+}, {
+"duration": 1.5,
+"texture": ExtResource("7_nwgr8")
+}, {
+"duration": 1.2,
+"texture": ExtResource("8_stg7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xwhl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qsdmw")
+}],
+"loop": false,
+"name": &"spellcast",
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.2,
@@ -47,9 +80,12 @@ script = ExtResource("1_tedb2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_27f86")
-animation = &"idle"
-frame_progress = 0.191747
+animation = &"spellcast"
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 33.5)
 shape = SubResource("RectangleShape2D_h306f")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

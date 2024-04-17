@@ -1,5 +1,7 @@
 extends TileMap
 
+signal placed
+
 # The coordinates for a placeable mushroom
 var placeable : Vector2i = Vector2i.ZERO
 
@@ -54,9 +56,12 @@ func _unhandled_input(_event):
 		var source_id : int = 1
 		var tile_id : int = 1
 		if placeable != Vector2i.ZERO:
+			placed.emit()
 			clear_layer(layer)
 			# Place mushroom at coordinates
-			set_cell(layer, placeable, source_id, Vector2i.ZERO, tile_id)
+			var place := placeable
+			await get_tree().create_timer(0.4).timeout
+			set_cell(layer, place, source_id, Vector2i.ZERO, tile_id)
 			# Add delay to connect signal
 			await get_tree().create_timer(0.05).timeout
 			if get_child_count() > 0:

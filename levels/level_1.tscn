@@ -185,5 +185,6 @@ position = Vector2(11420, 686)
 [node name="Pandora" parent="." instance=ExtResource("3_2po4s")]
 position = Vector2(350, 534)
 
+[connection signal="placed" from="Tile Map 1" to="Pandora" method="cast_spell"]
 [connection signal="dialogue" from="Random NPC" to="Pandora" method="prompt_dialogue"]
 [connection signal="dialogue" from="Farmer" to="Pandora" method="prompt_dialogue"]

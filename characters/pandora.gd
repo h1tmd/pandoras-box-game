@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -1000.0
 
 var paused := false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var is_casting := false
 
 
 func unpause(_res):
@@ -19,7 +20,9 @@ func _ready():
 
 func _physics_process(delta):
 	# Animations
-	if abs(velocity.x) > 0.1:
+	if is_casting:
+		animated_sprite_2d.play("spellcast")
+	elif abs(velocity.x) > 0.1:
 		animated_sprite_2d.play("walk")
 	else:
 		animated_sprite_2d.play("idle")
@@ -51,3 +54,11 @@ func prompt_dialogue(title):
 	var dialogue_file = load("res://dialogue/maindialogue.dialogue")
 	paused = true
 	DialogueManager.show_dialogue_balloon(dialogue_file, title)
+
+
+func cast_spell():
+	is_casting = true
+
+
+func _on_animated_sprite_2d_animation_finished():
+	is_casting = false
