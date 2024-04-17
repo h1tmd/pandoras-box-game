@@ -4,15 +4,15 @@ extends TileMap
 var placeable : Vector2i = Vector2i.ZERO
 
 func _process(_delta):
-	#clear_layer(2)
 	#set_layer_modulate(2, Color.WHITE)
 	var base_layer : int = 0
-	#var ui_layer : int = 2
-	#var source_id : int = 0
-	#var atlas_coords : Vector2i = Vector2i(5, 4)
+	var ui_layer : int = 2
+	var source_id : int = 1
+	var alternative_id : int = 2
 	var mouse : Vector2 = get_local_mouse_position()
 	var coords : Vector2i = local_to_map(mouse)
 	var tile_data : TileData = get_cell_tile_data(base_layer, coords)
+	clear_layer(ui_layer)
 	if tile_data:
 		# Break when null
 		while tile_data:
@@ -24,8 +24,8 @@ func _process(_delta):
 		tile_data = get_cell_tile_data(base_layer, coords)
 		var can_place_mushroom : bool = tile_data.get_custom_data("can_place_mushroom")
 		coords.y -= 1
-		#set_cell(ui_layer, coords, source_id, atlas_coords)
 		if can_place_mushroom:
+			set_cell(ui_layer, coords, source_id, Vector2i.ZERO,alternative_id)
 			# Put indicator
 			placeable = coords
 		else:
@@ -34,11 +34,11 @@ func _process(_delta):
 	else:
 		# Check the below tile
 		tile_data = get_cell_tile_data(base_layer, Vector2i(coords.x, coords.y + 1))
-		#set_cell(ui_layer, coords, source_id, atlas_coords)
 		if tile_data:
 			var can_place_mushroom : bool = tile_data.get_custom_data("can_place_mushroom")
 			if can_place_mushroom:
 				# Put indicator
+				set_cell(ui_layer, coords, source_id, Vector2i.ZERO, alternative_id)
 				placeable = coords
 			else:
 				#set_layer_modulate(2, Color.RED)
