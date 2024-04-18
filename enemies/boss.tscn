@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0u6u3n32aony"]
+
+[ext_resource type="Script" path="res://enemies/boss.gd" id="1_2ne4o"]
+[ext_resource type="Texture2D" uid="uid://dlmuwom47jiy1" path="res://assets/boss/boss_hover1.png" id="2_nh5h4"]
+[ext_resource type="Texture2D" uid="uid://bj0kdtg7xxodd" path="res://assets/boss/boss_hover2.png" id="3_srqm3"]
+[ext_resource type="Texture2D" uid="uid://bxp0tlgpvob3n" path="res://assets/boss/boss_hover3.png" id="4_kyrxk"]
+[ext_resource type="Texture2D" uid="uid://dg88w6cdycsgg" path="res://assets/boss/boss_hover4.png" id="5_xywsv"]
+[ext_resource type="Texture2D" uid="uid://bum2iesideel2" path="res://assets/boss/boss_hover5.png" id="6_8lrr0"]
+[ext_resource type="Texture2D" uid="uid://bu0gm1n8kilk2" path="res://assets/boss/boss_hover6.png" id="7_d0olv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kc4l"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("2_nh5h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_srqm3")
+}, {
+"duration": 1.1,
+"texture": ExtResource("4_kyrxk")
+}, {
+"duration": 1.5,
+"texture": ExtResource("5_xywsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8lrr0")
+}, {
+"duration": 1.1,
+"texture": ExtResource("7_d0olv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dy5sx"]
+size = Vector2(164, 355.375)
+
+[node name="Boss" type="Node2D"]
+script = ExtResource("1_2ne4o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_8kc4l")
+autoplay = "default"
+frame_progress = 0.159241
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -4.99999)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_dy5sx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

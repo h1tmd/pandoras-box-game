@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://cde05d6kwudav"]
+
+[ext_resource type="Texture2D" uid="uid://cx8nsyvens3m0" path="res://assets/mobs/zombie1.png" id="1_cyysx"]
+[ext_resource type="Script" path="res://enemies/zombie.gd" id="1_who76"]
+[ext_resource type="Texture2D" uid="uid://ok2map1b1b2s" path="res://assets/mobs/zombie2.png" id="2_s71cr"]
+[ext_resource type="Texture2D" uid="uid://cbrhp53nu0m0p" path="res://assets/mobs/zombie3.png" id="3_43d3p"]
+[ext_resource type="Texture2D" uid="uid://dl1pcdyp3tqxy" path="res://assets/mobs/zombie4.png" id="4_rpf03"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_maxij"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cyysx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s71cr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_43d3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rpf03")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vpmni"]
+radius = 57.0
+height = 296.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0fedu"]
+radius = 83.0
+height = 318.0
+
+[node name="Zombie" type="CharacterBody2D"]
+script = ExtResource("1_who76")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_maxij")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.1018
+speed_scale = 0.7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-16, 5)
+shape = SubResource("CapsuleShape2D_vpmni")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-17, 0)
+shape = SubResource("CapsuleShape2D_0fedu")
+debug_color = Color(0.905882, 0.290196, 0.247059, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

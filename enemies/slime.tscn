@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://daxg8gm8vnm87"]
+
+[ext_resource type="Texture2D" uid="uid://slv8q2ujexso" path="res://assets/mobs/slime1.png" id="1_bwnjp"]
+[ext_resource type="Script" path="res://enemies/slime.gd" id="1_t6hbl"]
+[ext_resource type="Texture2D" uid="uid://c7vp3ldpnk3jl" path="res://assets/mobs/slime2.png" id="2_24w4o"]
+[ext_resource type="Texture2D" uid="uid://d22e20sqvciuw" path="res://assets/mobs/slime3.png" id="3_ru3cy"]
+[ext_resource type="Texture2D" uid="uid://dbfqo0psmue4b" path="res://assets/mobs/slime4.png" id="4_o3r2x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mfkbw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bwnjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_24w4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ru3cy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o3r2x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d8yye"]
+radius = 56.0
+height = 132.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tsqd7"]
+radius = 60.493
+height = 158.588
+
+[node name="Slime" type="CharacterBody2D"]
+script = ExtResource("1_t6hbl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mfkbw")
+autoplay = "default"
+frame_progress = 0.732347
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
+position = Vector2(-5, 6)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_d8yye")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 10)
+rotation = -1.309
+shape = SubResource("CapsuleShape2D_tsqd7")
+debug_color = Color(0.913725, 0.254902, 0.356863, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
