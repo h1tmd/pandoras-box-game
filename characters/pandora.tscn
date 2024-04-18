@@ -76,6 +76,7 @@ animations = [{
 size = Vector2(140, 293)
 
 [node name="Pandora" type="CharacterBody2D"]
+collision_mask = 3
 script = ExtResource("1_tedb2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

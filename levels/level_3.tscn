@@ -1,0 +1,144 @@
+[gd_scene load_steps=16 format=3 uid="uid://4foe5fmf0404"]
+
+[ext_resource type="PackedScene" uid="uid://d0u6u3n32aony" path="res://enemies/boss.tscn" id="1_01phw"]
+[ext_resource type="TileSet" uid="uid://cn3q8e2va34cj" path="res://others/tile_set.tres" id="1_8iott"]
+[ext_resource type="Script" path="res://levels/tile_map3.gd" id="2_qh4cd"]
+[ext_resource type="Script" path="res://scripts/state_machine.gd" id="2_tm3sq"]
+[ext_resource type="PackedScene" uid="uid://dd38r1cp46v0" path="res://others/projectile.tscn" id="4_hjq2g"]
+[ext_resource type="PackedScene" uid="uid://b1ygqvanrtqr5" path="res://characters/pandora.tscn" id="4_stl0t"]
+[ext_resource type="Script" path="res://scripts/idle.gd" id="5_1bo40"]
+[ext_resource type="Script" path="res://scripts/spikes.gd" id="8_y11aa"]
+[ext_resource type="PackedScene" uid="uid://d1mq463d85w3l" path="res://others/spikes.tscn" id="9_4yh84"]
+[ext_resource type="PackedScene" uid="uid://bsmpmycuauu5s" path="res://others/warning.tscn" id="10_0yig6"]
+
+[sub_resource type="Animation" id="Animation_vwjvj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1458, 718)]
+}
+
+[sub_resource type="Animation" id="Animation_0wx18"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 0.840896),
+"update": 0,
+"values": [Vector2(960, 180), Vector2(960, 195)]
+}
+
+[sub_resource type="Animation" id="Animation_7nw5m"]
+resource_name = "move"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.5, 3),
+"transitions": PackedFloat32Array(1, 0.366023, 1, 0.812252),
+"update": 0,
+"values": [Vector2(1458, 718), Vector2(1467, 511), Vector2(1427, 478), Vector2(960, 182)]
+}
+
+[sub_resource type="Animation" id="Animation_l71o5"]
+resource_name = "projectiles"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 2.6, 3.6, 4.3, 6),
+"transitions": PackedFloat32Array(0.210225, 1, 1, 1, 1, 1.8025),
+"update": 0,
+"values": [Vector2(960, 180), Vector2(161, 180), Vector2(960, 180), Vector2(1694, 180), Vector2(1694, 180), Vector2(960, 180)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boss")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.6, 2.6, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [Vector2(1640, 870)],
+"method": &"make_projectile"
+}, {
+"args": [Vector2(960, 870)],
+"method": &"make_projectile"
+}, {
+"args": [Vector2(290, 870)],
+"method": &"make_projectile"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e4c8u"]
+_data = {
+"RESET": SubResource("Animation_vwjvj"),
+"idle": SubResource("Animation_0wx18"),
+"move": SubResource("Animation_7nw5m"),
+"projectiles": SubResource("Animation_l71o5")
+}
+
+[node name="Level 3" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_8iott")
+format = 2
+layer_0/name = "main"
+layer_0/tile_data = PackedInt32Array(851975, 327682, 1, 917511, 327682, 4, 983047, 327682, 5, 1048583, 327682, 6, 851976, 262146, 268435459, 917512, 262146, 4, 983048, 262146, 5, 1048584, 262146, 6, 851977, 196610, 268435459, 917513, 327682, 4, 983049, 327682, 5, 1048585, 327682, 6, 851978, 196610, 3, 917514, 262146, 1342177284, 983050, 196610, 5, 1048586, 196610, 536870917, 851979, 327682, 268435459, 917515, 327682, 268435462, 983051, 327682, 805306374, 1048587, 327682, 805306373, 851980, 327682, 3, 917516, 327682, 536870918, 983052, 262146, 805306374, 1048588, 262146, 805306373, 851981, 196610, 3, 917517, 196610, 4, 983053, 196610, 5, 1048589, 196610, 6, 851982, 262146, 3, 917518, 262146, 4, 983054, 262146, 5, 1048590, 262146, 6, 851983, 327682, 1, 917519, 196610, 805306373, 983055, 196610, 268435462, 1048591, 327682, 6, 851984, 196610, 3, 917520, 196610, 4, 983056, 196610, 5, 1048592, 196610, 6, 851985, 262146, 3, 917521, 262146, 4, 983057, 262146, 5, 1048593, 262146, 6, 851986, 327682, 3, 917522, 327682, 4, 983058, 327682, 5, 1048594, 327682, 6, 851987, 196610, 3, 917523, 196610, 4, 983059, 196610, 5, 1048595, 196610, 6, 851988, 196610, 3, 917524, 262146, 4, 983060, 262146, 5, 1048596, 262146, 6, 851989, 196610, 268435459, 917525, 327682, 4, 983061, 327682, 5, 1048597, 327682, 6, 851990, 327682, 268435459, 917526, 327682, 268435460, 983062, 327682, 268435461, 1048598, 327682, 268435462, 851972, 65538, 1, 917508, 65538, 4, 983044, 65538, 5, 1048580, 65538, 6, 851973, 196610, 1, 917509, 196610, 4, 983045, 196610, 5, 1048581, 196610, 6, 851974, 262146, 1, 917510, 262146, 4, 983046, 262146, 5, 1048582, 262146, 6, 851991, 262146, 268435459, 917527, 262146, 268435460, 983063, 262146, 268435461, 1048599, 262146, 268435462, 851992, 196610, 268435459, 917528, 196610, 268435460, 983064, 196610, 268435461, 1048600, 196610, 268435462, 851993, 458754, 3, 917529, 458754, 4, 983065, 458754, 5, 1048601, 458754, 6)
+layer_1/name = "mushroom"
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "ui"
+layer_2/tile_data = PackedInt32Array()
+script = ExtResource("2_qh4cd")
+
+[node name="Boss" parent="." instance=ExtResource("1_01phw")]
+position = Vector2(1458, 718)
+projectile_node = ExtResource("4_hjq2g")
+
+[node name="Pandora" parent="." instance=ExtResource("4_stl0t")]
+position = Vector2(751, 702)
+scale = Vector2(0.8, 0.8)
+
+[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_tm3sq")
+initial_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="State Machine"]
+script = ExtResource("5_1bo40")
+
+[node name="spikes" type="Node" parent="State Machine"]
+script = ExtResource("8_y11aa")
+spikes_scene = ExtResource("9_4yh84")
+warning_scene = ExtResource("10_0yig6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e4c8u")
+}
+autoplay = "move"
+
+[connection signal="placed" from="TileMap" to="Pandora" method="cast_spell"]
