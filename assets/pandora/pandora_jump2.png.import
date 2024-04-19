@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2y3b7lay51k5"
-path="res://.godot/imported/mushroom_outline.png-1b6033e990f5a7f108f239702f0912a6.ctex"
+uid="uid://fi1q2todbjv5"
+path="res://.godot/imported/pandora_jump2.png-f5efad36fa8a15e6d902bb2450d33c8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mushroom_outline.png"
-dest_files=["res://.godot/imported/mushroom_outline.png-1b6033e990f5a7f108f239702f0912a6.ctex"]
+source_file="res://assets/pandora/pandora_jump2.png"
+dest_files=["res://.godot/imported/pandora_jump2.png-f5efad36fa8a15e6d902bb2450d33c8b.ctex"]
 
 [params]
 

@@ -1,5 +1,7 @@
 extends Node2D
 
+signal mushroom_contact 
+
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var pandora = get_parent().find_child("Pandora")
 
@@ -16,6 +18,8 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	if body == pandora:
 		print("hit pandora")
+	elif body.name == "Mushroom":
+		mushroom_contact.emit()
 
 func make_projectile(projectile_direction: Vector2):
 	var projectile = projectile_node.instantiate()

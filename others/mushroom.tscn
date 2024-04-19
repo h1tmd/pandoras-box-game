@@ -1,24 +1,109 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd8vp7dku8q2t"]
+[gd_scene load_steps=13 format=3 uid="uid://cd8vp7dku8q2t"]
 
 [ext_resource type="Script" path="res://others/mushroom.gd" id="1_j0s1d"]
-[ext_resource type="Texture2D" uid="uid://db3q6abmrqql8" path="res://assets/mushroom.png" id="1_l6bb4"]
+[ext_resource type="Texture2D" uid="uid://d3s3eygwo4cg0" path="res://assets/mushroom/mushroom9.png" id="2_2amya"]
+[ext_resource type="Texture2D" uid="uid://b6tiajc7dr07e" path="res://assets/mushroom/mushroom8.png" id="3_bvwmt"]
+[ext_resource type="Texture2D" uid="uid://cqp76n1hp5nrq" path="res://assets/mushroom/mushroom7.png" id="4_jdset"]
+[ext_resource type="Texture2D" uid="uid://k3wc31j6yge6" path="res://assets/mushroom/mushroom6.png" id="5_rgjnk"]
+[ext_resource type="Texture2D" uid="uid://beeptnqk4okaa" path="res://assets/mushroom/mushroom5.png" id="6_kqrrd"]
+[ext_resource type="Texture2D" uid="uid://cjuhna6ib4rgw" path="res://assets/mushroom/mushroom4.png" id="7_b3qbm"]
+[ext_resource type="Texture2D" uid="uid://4qf4fuuduft2" path="res://assets/mushroom/mushroom3.png" id="8_wnrl4"]
+[ext_resource type="Texture2D" uid="uid://cyt1etdninx33" path="res://assets/mushroom/mushroom2.png" id="9_ksxm6"]
+[ext_resource type="Texture2D" uid="uid://dm2iunuom007h" path="res://assets/mushroom/mushroom1.png" id="10_8kdex"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1k7qy"]
-radius = 46.0
-height = 172.0
+radius = 40.7692
+height = 101.538
 
-[node name="Mushroom" type="Node2D"]
-position = Vector2(0, 10)
-scale = Vector2(0.8, 0.8)
+[sub_resource type="SpriteFrames" id="SpriteFrames_igtha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2amya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bvwmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jdset")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rgjnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kqrrd")
+}, {
+"duration": 1.2,
+"texture": ExtResource("7_b3qbm")
+}, {
+"duration": 1.3,
+"texture": ExtResource("8_wnrl4")
+}, {
+"duration": 1.2,
+"texture": ExtResource("9_ksxm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8kdex")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_8kdex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ksxm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wnrl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_b3qbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kqrrd")
+}, {
+"duration": 1.2,
+"texture": ExtResource("5_rgjnk")
+}, {
+"duration": 1.3,
+"texture": ExtResource("4_jdset")
+}, {
+"duration": 1.2,
+"texture": ExtResource("3_bvwmt")
+}, {
+"duration": 1.2,
+"texture": ExtResource("2_2amya")
+}],
+"loop": false,
+"name": &"disappear",
+"speed": 11.0
+}]
+
+[node name="Mushroom" type="StaticBody2D"]
+position = Vector2(0, 12)
+scale = Vector2(1.3, 1.3)
+collision_layer = 4
 script = ExtResource("1_j0s1d")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_l6bb4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.769231, -6.15385)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_1k7qy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_igtha")
+animation = &"appear"
+autoplay = "appear"
+frame = 8
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 14)
+position = Vector2(-0.769231, -6.15385)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_1k7qy")
 

@@ -15,7 +15,7 @@ func Enter():
 	await get_tree().create_timer(0.3).timeout
 	spikes.queue_free()
 	print("before")
-	Transitioned.emit(self, "idle")
+	Transitioned.emit(self, "dash")
 	print("after")
 
 

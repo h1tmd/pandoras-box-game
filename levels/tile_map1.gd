@@ -5,6 +5,9 @@ signal placed
 # The coordinates for a placeable mushroom
 var placeable : Vector2i = Vector2i.ZERO
 
+func restart():
+	SceneChanger.change_scene("res://levels/level_1.tscn")
+
 func _process(_delta):
 	#set_layer_modulate(2, Color.WHITE)
 	var base_layer : int = 0
@@ -56,11 +59,11 @@ func _unhandled_input(_event):
 		var source_id : int = 1
 		var tile_id : int = 1
 		if placeable != Vector2i.ZERO:
+			#SceneChanger.change_scene("res://levels/level_3.tscn")
 			placed.emit()
 			clear_layer(layer)
 			# Place mushroom at coordinates
 			var place := placeable
-			await get_tree().create_timer(0.4).timeout
 			set_cell(layer, place, source_id, Vector2i.ZERO, tile_id)
 			# Add delay to connect signal
 			await get_tree().create_timer(0.05).timeout
@@ -70,3 +73,5 @@ func _unhandled_input(_event):
 # Clear up leftover instances
 func clear_all():
 	clear_layer(1)
+
+

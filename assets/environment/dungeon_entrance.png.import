@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db3q6abmrqql8"
-path="res://.godot/imported/mushroom.png-1eeaa92746877ee598b2e48ba3d07332.ctex"
+uid="uid://b1k0tjch3m5b7"
+path="res://.godot/imported/dungeon_entrance.png-942b59e81317e63c86b6251932c6886b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mushroom.png"
-dest_files=["res://.godot/imported/mushroom.png-1eeaa92746877ee598b2e48ba3d07332.ctex"]
+source_file="res://assets/environment/dungeon_entrance.png"
+dest_files=["res://.godot/imported/dungeon_entrance.png-942b59e81317e63c86b6251932c6886b.ctex"]
 
 [params]
 

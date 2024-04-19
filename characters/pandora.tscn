@@ -1,22 +1,47 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1ygqvanrtqr5"]
+[gd_scene load_steps=25 format=3 uid="uid://b1ygqvanrtqr5"]
 
 [ext_resource type="Script" path="res://characters/pandora.gd" id="1_tedb2"]
 [ext_resource type="Texture2D" uid="uid://dfhihimprye5d" path="res://assets/pandora/pandora_idle1.png" id="1_xe7uu"]
+[ext_resource type="Texture2D" uid="uid://dgk01kapt1sua" path="res://assets/pandora/pandora_fall1.png" id="2_bfvua"]
 [ext_resource type="Texture2D" uid="uid://hgkv8onuxxfk" path="res://assets/pandora/pandora_idle2.png" id="2_sb0f4"]
 [ext_resource type="Texture2D" uid="uid://mbiacwr6u44e" path="res://assets/pandora/pandora_walk1.png" id="3_6ckyn"]
+[ext_resource type="Texture2D" uid="uid://dx4m3mpt1h8ht" path="res://assets/pandora/pandora_fall2.png" id="3_m8k3b"]
+[ext_resource type="Texture2D" uid="uid://jopboyinhyu5" path="res://assets/pandora/pandora_fall3.png" id="4_hrse7"]
 [ext_resource type="Texture2D" uid="uid://dy4grdq1w5pi6" path="res://assets/pandora/pandora_spell1.png" id="4_tecvg"]
 [ext_resource type="Texture2D" uid="uid://c0i5rfbebjlgt" path="res://assets/pandora/pandora_walk2.png" id="4_u1yvr"]
 [ext_resource type="Texture2D" uid="uid://swo81c5u3g82" path="res://assets/pandora/pandora_spell2.png" id="5_dsw0u"]
 [ext_resource type="Texture2D" uid="uid://b785rn2otny5c" path="res://assets/pandora/pandora_walk3.png" id="5_wyd7c"]
 [ext_resource type="Texture2D" uid="uid://b6n40rwwwc1c0" path="res://assets/pandora/pandora_spell3.png" id="6_7bq8b"]
 [ext_resource type="Texture2D" uid="uid://4bw0v6o7gk57" path="res://assets/pandora/pandora_walk4.png" id="6_wvqbu"]
+[ext_resource type="Texture2D" uid="uid://b0ixre2tvof5e" path="res://assets/pandora/pandora_jump1.png" id="7_55rdu"]
 [ext_resource type="Texture2D" uid="uid://belgpr0w3yi5u" path="res://assets/pandora/pandora_spell4.png" id="7_nwgr8"]
 [ext_resource type="Texture2D" uid="uid://b7tbrtfpo76mw" path="res://assets/pandora/pandora_spell5.png" id="8_stg7m"]
+[ext_resource type="Texture2D" uid="uid://fi1q2todbjv5" path="res://assets/pandora/pandora_jump2.png" id="8_vvej2"]
+[ext_resource type="Texture2D" uid="uid://bgr6l3bwqtowc" path="res://assets/pandora/pandora_jump3.png" id="9_g7jq7"]
 [ext_resource type="Texture2D" uid="uid://yp7odljpvifv" path="res://assets/pandora/pandora_spell7.png" id="9_xwhl4"]
+[ext_resource type="Texture2D" uid="uid://0jcyg1n5ryos" path="res://assets/pandora/pandora_jump4.png" id="10_kpu3q"]
 [ext_resource type="Texture2D" uid="uid://bqvt2sgdo5p0s" path="res://assets/pandora/pandora_spell6.png" id="10_qsdmw"]
+[ext_resource type="Texture2D" uid="uid://c0jjmv5cetvsh" path="res://assets/pandora/pandora_jump5.png" id="11_jxg0p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_27f86"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bfvua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m8k3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hrse7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_55rdu")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_xe7uu")
@@ -27,6 +52,23 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_vvej2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_g7jq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kpu3q")
+}, {
+"duration": 3.0,
+"texture": ExtResource("11_jxg0p")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -81,9 +123,7 @@ script = ExtResource("1_tedb2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_27f86")
-animation = &"spellcast"
-frame = 6
-frame_progress = 1.0
+animation = &"fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 33.5)

@@ -35,6 +35,7 @@ radius = 39.0
 height = 236.0
 
 [node name="Wisp" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_bys4x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

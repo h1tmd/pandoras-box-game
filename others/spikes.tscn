@@ -1,17 +1,72 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1mq463d85w3l"]
 
-[ext_resource type="Texture2D" uid="uid://rml2auci0emx" path="res://icon.svg" id="1_hv6td"]
+[ext_resource type="Texture2D" uid="uid://bwa7wj2xji6hw" path="res://assets/boss/spikes.png" id="1_o4jbn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uymum"]
 size = Vector2(1392, 49)
 
 [node name="Spikes" type="Area2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(964, 846.5)
-scale = Vector2(10.9219, 0.445313)
-texture = ExtResource("1_hv6td")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(965, 845.5)
 shape = SubResource("RectangleShape2D_uymum")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(325, 841)
+scale = Vector2(0.984375, 0.984375)
+texture = ExtResource("1_o4jbn")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(451, 843)
+scale = Vector2(0.984375, 0.984375)
+texture = ExtResource("1_o4jbn")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(566, 846)
+scale = Vector2(0.984375, 0.984375)
+texture = ExtResource("1_o4jbn")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(689, 846)
+scale = Vector2(0.984375, 0.984375)
+texture = ExtResource("1_o4jbn")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(809, 848)
+scale = Vector2(0.984375, 0.984375)
+texture = ExtResource("1_o4jbn")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(930, 846)
+scale = Vector2(0.984375, 0.984375)
+texture = ExtResource("1_o4jbn")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(1049, 846)
+scale = Vector2(0.984375, 0.984375)
+texture = ExtResource("1_o4jbn")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(1178, 841)
+scale = Vector2(0.984375, 0.984375)
+texture = ExtResource("1_o4jbn")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(1298, 842)
+scale = Vector2(0.984375, 0.984375)
+texture = ExtResource("1_o4jbn")
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+position = Vector2(1419, 842)
+scale = Vector2(0.984375, 0.984375)
+texture = ExtResource("1_o4jbn")
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+position = Vector2(1544, 841)
+scale = Vector2(0.984375, 0.984375)
+texture = ExtResource("1_o4jbn")
+
+[node name="Sprite2D13" type="Sprite2D" parent="."]
+position = Vector2(1605, 845)
+scale = Vector2(0.984375, 0.984375)
+texture = ExtResource("1_o4jbn")

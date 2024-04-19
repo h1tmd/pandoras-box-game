@@ -1,7 +1,12 @@
 extends CharacterBody2D
 
+signal collided
+
 const SPEED = 100
 var direction: Vector2 = Vector2.RIGHT * SPEED * -1
+
+func _ready():
+	set_physics_process(false)
 
 func _physics_process(delta):
 	enemy_wall_collision()
@@ -27,7 +32,12 @@ func enemy_flip(delta):
 	else:
 		get_node("AnimatedSprite2D").flip_h = true
 		velocity.x = direction.x * SPEED * delta
+
+func start_moving(_body):
+	set_physics_process(true)
 	
 func _on_area_2d_body_entered(body):
 	if body.name == "Pandora":
-		get_tree().change_scene_to_file("res://levels/level_1.tscn")
+		body.set_physics_process(false)
+		set_physics_process(false)
+		collided.emit()
