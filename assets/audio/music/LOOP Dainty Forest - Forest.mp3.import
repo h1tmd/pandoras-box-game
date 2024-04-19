@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1iw3m8rv5ci"
+path="res://.godot/imported/LOOP Dainty Forest - Forest.mp3-6df98197397edbbb4fef84053f1e0742.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/LOOP Dainty Forest - Forest.mp3"
+dest_files=["res://.godot/imported/LOOP Dainty Forest - Forest.mp3-6df98197397edbbb4fef84053f1e0742.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

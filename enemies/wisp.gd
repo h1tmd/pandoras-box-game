@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 signal collided
 
+@onready var player_hurt = $"../PlayerHurt"
+
 const SPEED = 100
 var direction: Vector2 = Vector2.RIGHT * SPEED * -1
 
@@ -38,6 +40,7 @@ func start_moving(_body):
 	
 func _on_area_2d_body_entered(body):
 	if body.name == "Pandora":
+		player_hurt.play()
 		body.set_physics_process(false)
 		set_physics_process(false)
 		collided.emit()

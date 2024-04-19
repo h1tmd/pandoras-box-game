@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cd8vp7dku8q2t"]
+[gd_scene load_steps=14 format=3 uid="uid://cd8vp7dku8q2t"]
 
 [ext_resource type="Script" path="res://others/mushroom.gd" id="1_j0s1d"]
 [ext_resource type="Texture2D" uid="uid://d3s3eygwo4cg0" path="res://assets/mushroom/mushroom9.png" id="2_2amya"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://4qf4fuuduft2" path="res://assets/mushroom/mushroom3.png" id="8_wnrl4"]
 [ext_resource type="Texture2D" uid="uid://cyt1etdninx33" path="res://assets/mushroom/mushroom2.png" id="9_ksxm6"]
 [ext_resource type="Texture2D" uid="uid://dm2iunuom007h" path="res://assets/mushroom/mushroom1.png" id="10_8kdex"]
+[ext_resource type="AudioStream" uid="uid://co83kh6gc5l1v" path="res://assets/audio/sfx/mushroom_jump.mp3" id="11_xrfhs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1k7qy"]
 radius = 40.7692
@@ -106,5 +107,9 @@ frame_progress = 1.0
 position = Vector2(-0.769231, -6.15385)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_1k7qy")
+
+[node name="MushroomJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_xrfhs")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

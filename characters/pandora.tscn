@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b1ygqvanrtqr5"]
+[gd_scene load_steps=28 format=3 uid="uid://b1ygqvanrtqr5"]
 
 [ext_resource type="Script" path="res://characters/pandora.gd" id="1_tedb2"]
 [ext_resource type="Texture2D" uid="uid://dfhihimprye5d" path="res://assets/pandora/pandora_idle1.png" id="1_xe7uu"]
@@ -22,6 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://0jcyg1n5ryos" path="res://assets/pandora/pandora_jump4.png" id="10_kpu3q"]
 [ext_resource type="Texture2D" uid="uid://bqvt2sgdo5p0s" path="res://assets/pandora/pandora_spell6.png" id="10_qsdmw"]
 [ext_resource type="Texture2D" uid="uid://c0jjmv5cetvsh" path="res://assets/pandora/pandora_jump5.png" id="11_jxg0p"]
+[ext_resource type="AudioStream" uid="uid://u4ispsqk25ia" path="res://assets/audio/sfx/spellcast.mp3" id="23_3rl34"]
+[ext_resource type="AudioStream" uid="uid://ck2cwnx8x1rup" path="res://assets/audio/sfx/normal_jump.mp3" id="24_p2nmt"]
+[ext_resource type="AudioStream" uid="uid://biuraqc3g73h1" path="res://assets/audio/sfx/fall_death.wav" id="25_84e2q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_27f86"]
 animations = [{
@@ -128,5 +131,17 @@ animation = &"fall"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 33.5)
 shape = SubResource("RectangleShape2D_h306f")
+
+[node name="SpellCast" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_3rl34")
+bus = &"SFX"
+
+[node name="JumpAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_p2nmt")
+bus = &"SFX"
+
+[node name="FallAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_84e2q")
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

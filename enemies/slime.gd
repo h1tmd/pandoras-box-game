@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 signal collided
 
+@onready var player_hurt = $"../PlayerHurt"
+
 const SPEED = 60
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -38,6 +40,7 @@ func enemy_flip(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Pandora":
+		player_hurt.play()
 		body.set_physics_process(false)
 		set_physics_process(false)
 		collided.emit()
