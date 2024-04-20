@@ -17,12 +17,7 @@ func Enter():
 	#call_deferred("Transitioned.emit(self, 'idle')")
 	Transitioned.emit(self, "idle")
 
-func Exit():
-	pass
-	#await animation_player.animation_finished
-	#if boss.position < Vector2(0, 0):
-		#boss.queue_free()
-		#print("freed")
+
 
 
 func Update(_delta: float):
