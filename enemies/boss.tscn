@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0u6u3n32aony"]
+[gd_scene load_steps=11 format=3 uid="uid://d0u6u3n32aony"]
 
 [ext_resource type="Script" path="res://enemies/boss.gd" id="1_2ne4o"]
 [ext_resource type="Texture2D" uid="uid://dlmuwom47jiy1" path="res://assets/boss/boss_hover1.png" id="2_nh5h4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dg88w6cdycsgg" path="res://assets/boss/boss_hover4.png" id="5_xywsv"]
 [ext_resource type="Texture2D" uid="uid://bum2iesideel2" path="res://assets/boss/boss_hover5.png" id="6_8lrr0"]
 [ext_resource type="Texture2D" uid="uid://bu0gm1n8kilk2" path="res://assets/boss/boss_hover6.png" id="7_d0olv"]
+[ext_resource type="AudioStream" uid="uid://co83kh6gc5l1v" path="res://assets/audio/sfx/mushroom_jump.mp3" id="8_yoc2m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8kc4l"]
 animations = [{
@@ -53,5 +54,9 @@ collision_mask = 5
 position = Vector2(1, -4.99999)
 scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_dy5sx")
+
+[node name="Mushroom Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_yoc2m")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

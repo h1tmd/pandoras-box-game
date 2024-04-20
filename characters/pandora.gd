@@ -40,9 +40,10 @@ func _physics_process(delta):
 		animated_sprite_2d.flip_h = false
 	
 	if position.y > 1400:
-		fallen.emit()
 		fall_audio.play()
+		#await get_tree().create_timer(2).timeout
 		set_physics_process(false)
+		fallen.emit()
 	
 	# Gravity
 	if not is_on_floor():

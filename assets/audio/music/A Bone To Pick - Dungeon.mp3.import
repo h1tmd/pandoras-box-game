@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/A Bone To Pick - Dungeon.mp3-a17ec5cd3c7b5da0
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

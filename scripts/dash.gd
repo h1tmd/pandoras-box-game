@@ -1,5 +1,7 @@
 extends State
 
+signal end(title)
+
 @onready var animation_player = $"../../AnimationPlayer"
 @onready var boss = $"../../Boss"
 
@@ -11,11 +13,13 @@ var defeated := false
 
 func Enter():
 	animation_player.play("dash")
+	await animation_player.animation_finished
 	#call_deferred("Transitioned.emit(self, 'idle')")
 	Transitioned.emit(self, "idle")
 
 func Exit():
-	await animation_player.animation_finished
+	pass
+	#await animation_player.animation_finished
 	#if boss.position < Vector2(0, 0):
 		#boss.queue_free()
 		#print("freed")
@@ -23,29 +27,21 @@ func Exit():
 
 func Update(_delta: float):
 	if not defeated:
+		# Boss defeated
 		if boss.position < Vector2(-290, -255):
 			boss.queue_free()
 			defeated = true
-			print("freed")
-	## check if colliding with mushroom
-		########stop animation
-		## launch boss
-		##queue free boss
-	#if animation_player.animation_finished:
-		#Transitioned.emit(self, "idle")
+			await get_tree().create_timer(2).timeout
+			MusicPlayer.stop()
+			MusicPlayer.stream = load("res://assets/audio/music/Fly - Title Screen.mp3")
+			MusicPlayer.play()
+			end.emit("endcredit")
+			#SceneChanger.change_scene("res://levels/level_1.tscn")
 
 func Physics_Update(_delta: float):
-	#var speed = (boss.position.x - previous_position) / _delta
-	#print("Speed: ", speed)
-	#previous_position = boss.position.x
 	if contact and not defeated:
-		#var acceleration = boss.global_position.direction_to(Vector2(0, 0)) * 500
-		#velocity += acceleration * _delta
 		velocity = boss.position.direction_to(Vector2(-290, -255)) * 3000
-		#rotation = velocity.angle()
-
 		boss.position += velocity * _delta
-
 
 func _on_boss_mushroom_contact():
 	contact = true

@@ -1,6 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://tw2mxled0hrf"]
 
 [ext_resource type="Texture2D" uid="uid://b1k0tjch3m5b7" path="res://assets/environment/dungeon_entrance.png" id="1_2f3va"]
+[ext_resource type="Script" path="res://levels/level_1.gd" id="1_i2o6v"]
 [ext_resource type="TileSet" uid="uid://cn3q8e2va34cj" path="res://others/tile_set.tres" id="1_ulu3h"]
 [ext_resource type="PackedScene" uid="uid://h2s2rkd0gx4a" path="res://characters/random_npc.tscn" id="2_8806b"]
 [ext_resource type="Script" path="res://levels/Dungeon.gd" id="2_dywn5"]
@@ -13,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://dno2my6lpgd4n" path="res://enemies/goblin.tscn" id="8_5nxck"]
 [ext_resource type="PackedScene" uid="uid://dce0f47suy7e1" path="res://enemies/wisp.tscn" id="11_v7pu6"]
 [ext_resource type="Texture2D" uid="uid://p381gt84oydh" path="res://assets/environment/bg_forestlong.png" id="12_exre6"]
-[ext_resource type="AudioStream" uid="uid://4mhs78ex8qmx" path="res://assets/audio/music/Dainty Forest - Forest.mp3" id="13_swpxa"]
 [ext_resource type="AudioStream" uid="uid://cd5vicia8y525" path="res://assets/audio/sfx/forest_level_ambience.mp3" id="14_e4fqb"]
 [ext_resource type="AudioStream" uid="uid://dh8bo6a65y26k" path="res://assets/audio/sfx/character_hurt.wav" id="15_o4pn8"]
 
@@ -24,6 +24,7 @@ size = Vector2(517, 918)
 size = Vector2(97.5, 987.5)
 
 [node name="Level 1" type="Node2D"]
+script = ExtResource("1_i2o6v")
 metadata/_edit_vertical_guides_ = [4055.0]
 
 [node name="Dungeon" type="Sprite2D" parent="."]
@@ -80,7 +81,6 @@ scale = Vector2(0.8, 0.8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area"]
 position = Vector2(92.5, -307.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6cdcg")
 
 [node name="Wisp" parent="." instance=ExtResource("11_v7pu6")]
@@ -102,12 +102,7 @@ motion_mirroring = Vector2(3012, 0)
 texture = ExtResource("12_exre6")
 centered = false
 
-[node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_swpxa")
-autoplay = true
-bus = &"Music"
-
-[node name="Ambient" type="AudioStreamPlayer" parent="BGM"]
+[node name="Ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_e4fqb")
 autoplay = true
 bus = &"SFX"

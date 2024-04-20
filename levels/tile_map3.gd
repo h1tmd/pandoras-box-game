@@ -2,6 +2,9 @@ extends TileMap
 
 signal placed
 
+func restart():
+	SceneChanger.change_scene("res://levels/level_3.tscn")
+
 # The coordinates for a placeable mushroom
 var placeable : Vector2i = Vector2i.ZERO
 
@@ -70,3 +73,4 @@ func _unhandled_input(_event):
 # Clear up leftover instances
 func clear_all():
 	clear_layer(1)
+	

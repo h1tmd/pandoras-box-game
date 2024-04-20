@@ -1,6 +1,10 @@
 extends CharacterBody2D
 
-const SPEED = 100
+signal collided
+
+@onready var player_hurt = $"../PlayerHurt"
+
+const SPEED = 150
 var direction: Vector2 = Vector2.RIGHT * SPEED
 
 func _physics_process(delta):
@@ -30,4 +34,7 @@ func enemy_flip(delta):
 	
 func _on_area_2d_body_entered(body):
 	if body.name == "Pandora":
-		get_tree().change_scene_to_file("res://levels/level_1.tscn")
+		player_hurt.play()
+		body.set_physics_process(false)
+		set_physics_process(false)
+		collided.emit()

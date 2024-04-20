@@ -58,10 +58,12 @@ Janitor: I got food and water at home and that is already something to be happy 
 
 ~ boss
 The mage from the beginning: OH THANK YOU FOR BEING SO GULLIBLE!
-The mage from the beginning: You released my master from his chains and is now going to rule the-
+The mage from the beginning: There was no power here in the first place.
+The mage from the beginning: You coming here has released my master from his chains and is now going to rule the world!!!
 => END
 
 ~ endcredit
+You have defeated the Evil Wizard!
 "With the Evil Wizard finally being defeated, the townspeople thank you and sing you praises. You went home and got a good night sleep" 
 "What Adventure awaits you next?"
 => END!

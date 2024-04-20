@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://5isciqs0wn7h"]
+
+[node name="options_screen" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 417.0
+offset_top = 81.0
+offset_right = 878.0
+offset_bottom = 280.0
+text = "OPTIONS"
