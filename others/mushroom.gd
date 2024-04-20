@@ -7,7 +7,7 @@ signal jumped
 @onready var mushroom_jump = $MushroomJump
 
 var state = true
-const ENEMIES = ["Slime", "Goblin"]
+const ENEMIES = ["Slime", "Goblin", "Zombie", "Skeleton", "Skeleton2"]
 
 func _on_area_2d_body_entered(body):
 	if state:

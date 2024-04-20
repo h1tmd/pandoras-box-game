@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ch1db62nb2qmc"]
+[gd_scene load_steps=13 format=3 uid="uid://ch1db62nb2qmc"]
 
 [ext_resource type="TileSet" uid="uid://cn3q8e2va34cj" path="res://others/tile_set.tres" id="1_7oen3"]
 [ext_resource type="Script" path="res://levels/level_2.gd" id="1_d14um"]
@@ -10,6 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://dh8bo6a65y26k" path="res://assets/audio/sfx/character_hurt.wav" id="6_y3rrp"]
 [ext_resource type="Texture2D" uid="uid://fww6xtgidnx6" path="res://assets/environment/bg_dungeon_long.png" id="7_74yo8"]
 [ext_resource type="PackedScene" uid="uid://bnhuaj32m053g" path="res://characters/random_again.tscn" id="10_p451o"]
+[ext_resource type="PackedScene" uid="uid://cde05d6kwudav" path="res://enemies/zombie.tscn" id="11_wtppl"]
+[ext_resource type="PackedScene" uid="uid://c32uc82pnbw7k" path="res://enemies/skeleton.tscn" id="12_15g1a"]
 
 [node name="Level 2" type="Node2D"]
 script = ExtResource("1_d14um")
@@ -46,6 +48,15 @@ position = Vector2(15280, 833)
 [node name="Random NPC" parent="." instance=ExtResource("10_p451o")]
 position = Vector2(25051, 829)
 
+[node name="Zombie" parent="." instance=ExtResource("11_wtppl")]
+position = Vector2(5880, 792)
+
+[node name="Skeleton" parent="." instance=ExtResource("12_15g1a")]
+position = Vector2(12774, 809)
+
+[node name="Skeleton2" parent="." instance=ExtResource("12_15g1a")]
+position = Vector2(11871, 817)
+
 [node name="Pandora" parent="." instance=ExtResource("6_i1r8e")]
 position = Vector2(129, 682)
 
@@ -68,4 +79,7 @@ stream = ExtResource("6_y3rrp")
 [connection signal="collided" from="Bat3" to="Tile Map 2" method="restart"]
 [connection signal="dialogue" from="Janitor" to="Pandora" method="prompt_dialogue"]
 [connection signal="dialogue" from="Random NPC" to="Pandora" method="prompt_dialogue"]
+[connection signal="collided" from="Zombie" to="Tile Map 2" method="restart"]
+[connection signal="collided" from="Skeleton" to="Tile Map 2" method="restart"]
+[connection signal="collided" from="Skeleton2" to="Tile Map 2" method="restart"]
 [connection signal="fallen" from="Pandora" to="Tile Map 2" method="restart"]

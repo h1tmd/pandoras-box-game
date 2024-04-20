@@ -1,90 +1,47 @@
-[gd_scene load_steps=20 format=3 uid="uid://bv7tkgex0huvc"]
+[gd_scene load_steps=5 format=3 uid="uid://bv7tkgex0huvc"]
 
-[ext_resource type="Script" path="res://Levels/credits_screen.gd" id="1_8hjkc"]
-[ext_resource type="Texture2D" uid="uid://bo00s7vpa6ym" path="res://Assets/tile.png" id="1_rl6r3"]
-[ext_resource type="Texture2D" uid="uid://brvxir3he4dmm" path="res://Assets/Text/ARTIST.png" id="2_y8j0x"]
-[ext_resource type="Texture2D" uid="uid://c2f2rfwuwlgrw" path="res://Assets/Text/MUSIC.png" id="3_fh2vk"]
-[ext_resource type="Texture2D" uid="uid://c7ns6hyiub7mc" path="res://Assets/Text/thanks.png" id="3_pxcod"]
-[ext_resource type="Texture2D" uid="uid://dwd811eove70j" path="res://Assets/Text/REFERENCE.png" id="4_iyx8n"]
-[ext_resource type="Texture2D" uid="uid://y2xuy0bj1cva" path="res://Assets/Text/PROGRAMMERS.png" id="4_q0hdb"]
-[ext_resource type="Texture2D" uid="uid://mjl0i85ibof4" path="res://Assets/Text/Pandora’s Box (29.7 x 21 cm).png" id="8_fxnhi"]
-[ext_resource type="Texture2D" uid="uid://cqhuftb7gpi8q" path="res://Assets/PANDORA.png" id="9_4qurf"]
-[ext_resource type="Texture2D" uid="uid://dbxjth52446ft" path="res://Assets/Slime Left 3.png" id="10_7ctx2"]
-[ext_resource type="Texture2D" uid="uid://7qu4p2u3yde6" path="res://Assets/Wisp Right 4.png" id="11_5iykp"]
-[ext_resource type="Texture2D" uid="uid://bucoqqqa2dvsk" path="res://Assets/JANITOR.png" id="12_j452d"]
-[ext_resource type="Texture2D" uid="uid://brgdycvltld3l" path="res://Assets/FARMER.png" id="13_ufunq"]
-[ext_resource type="Texture2D" uid="uid://duawu40wcxngo" path="res://Assets/Skeleton Left 1.png" id="14_pgyd6"]
-[ext_resource type="Texture2D" uid="uid://c8hy0wkv1ayns" path="res://Assets/Zombie Right 2.png" id="15_ssw7c"]
-[ext_resource type="Texture2D" uid="uid://kulhiq07jfht" path="res://Assets/BOSS.png" id="16_1kdj7"]
-[ext_resource type="Texture2D" uid="uid://dm3i4l5ppt2qo" path="res://Assets/Bat Left 1.png" id="17_thyok"]
+[ext_resource type="Script" path="res://menu/credits_screen.gd" id="1_8hjkc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjoco"]
-texture = ExtResource("1_rl6r3")
-4:4/size_in_atlas = Vector2i(4, 4)
 4:4/0 = 0
-4:8/size_in_atlas = Vector2i(4, 4)
 4:8/0 = 0
-12:4/size_in_atlas = Vector2i(4, 4)
 12:4/0 = 0
-16:4/size_in_atlas = Vector2i(4, 4)
 16:4/0 = 0
-20:4/size_in_atlas = Vector2i(4, 4)
 20:4/0 = 0
-12:8/size_in_atlas = Vector2i(4, 4)
 12:8/0 = 0
-16:8/size_in_atlas = Vector2i(4, 4)
 16:8/0 = 0
-20:8/size_in_atlas = Vector2i(4, 4)
 20:8/0 = 0
-28:4/size_in_atlas = Vector2i(4, 4)
 28:4/0 = 0
-28:8/size_in_atlas = Vector2i(4, 4)
 28:8/0 = 0
-4:12/size_in_atlas = Vector2i(4, 4)
 4:12/0 = 0
-4:16/size_in_atlas = Vector2i(4, 4)
 4:16/0 = 0
-4:20/size_in_atlas = Vector2i(4, 4)
 4:20/0 = 0
-4:24/size_in_atlas = Vector2i(4, 4)
 4:24/0 = 0
-12:12/size_in_atlas = Vector2i(4, 4)
 12:12/0 = 0
-16:12/size_in_atlas = Vector2i(4, 4)
 16:12/0 = 0
-20:12/size_in_atlas = Vector2i(4, 4)
 20:12/0 = 0
-12:16/size_in_atlas = Vector2i(4, 4)
 12:16/0 = 0
-16:16/size_in_atlas = Vector2i(4, 4)
 16:16/0 = 0
-20:16/size_in_atlas = Vector2i(4, 4)
 20:16/0 = 0
-12:20/size_in_atlas = Vector2i(4, 4)
 12:20/0 = 0
-16:20/size_in_atlas = Vector2i(4, 4)
 16:20/0 = 0
-20:20/size_in_atlas = Vector2i(4, 4)
 20:20/0 = 0
-12:24/size_in_atlas = Vector2i(4, 4)
 12:24/0 = 0
-16:24/size_in_atlas = Vector2i(4, 4)
 16:24/0 = 0
-20:24/size_in_atlas = Vector2i(4, 4)
 20:24/0 = 0
-28:12/size_in_atlas = Vector2i(4, 4)
 28:12/0 = 0
-28:16/size_in_atlas = Vector2i(4, 4)
 28:16/0 = 0
-28:20/size_in_atlas = Vector2i(4, 4)
 28:20/0 = 0
-28:24/size_in_atlas = Vector2i(4, 4)
 28:24/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_2kckn"]
 sources/0 = SubResource("TileSetAtlasSource_jjoco")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_drb12"]
+load_path = "res://.godot/imported/bat.png-754d449c81e699b949b8096c3915df80.ctex"
+
 [node name="credits_screen" type="Node2D"]
+scale = Vector2(1.66, 1.66)
 script = ExtResource("1_8hjkc")
 
 [node name="roll_credits" type="Node2D" parent="."]
@@ -105,32 +62,26 @@ scale = Vector2(2, 2)
 [node name="Pandora’sBox(29_7X21Cm)" type="Sprite2D" parent="roll_credits/text"]
 position = Vector2(576, 1423)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_fxnhi")
 
 [node name="Thanks" type="Sprite2D" parent="roll_credits/text"]
 position = Vector2(576, 1823)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_pxcod")
 
 [node name="Reference" type="Sprite2D" parent="roll_credits/text"]
 position = Vector2(576, 948)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("4_iyx8n")
 
 [node name="Programmers" type="Sprite2D" parent="roll_credits/text"]
 position = Vector2(593, 630)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_q0hdb")
 
 [node name="Music" type="Sprite2D" parent="roll_credits/text"]
 position = Vector2(576, 400)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_fh2vk")
 
 [node name="Artist" type="Sprite2D" parent="roll_credits/text"]
 position = Vector2(576, 173)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_y8j0x")
 
 [node name="sprites" type="Node2D" parent="roll_credits"]
 position = Vector2(-1152, -346)
@@ -139,45 +90,37 @@ scale = Vector2(2, 2)
 [node name="Pandora" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(942, 295)
 rotation = 0.232129
-texture = ExtResource("9_4qurf")
 
 [node name="SlimeLeft3" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(131, 385)
-texture = ExtResource("10_7ctx2")
 flip_h = true
 
 [node name="WispRight4" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(233, 237)
 rotation = 0.232129
-texture = ExtResource("11_5iykp")
 
 [node name="Janitor" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(109, 909)
-texture = ExtResource("12_j452d")
 flip_h = true
 
 [node name="Farmer" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(286, 998)
-texture = ExtResource("13_ufunq")
 flip_h = true
 
 [node name="SkeletonLeft1" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(1041, 913)
-texture = ExtResource("14_pgyd6")
 
 [node name="ZombieRight2" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(885, 999)
-texture = ExtResource("15_ssw7c")
 flip_h = true
 
 [node name="Boss" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(1010, 1781)
-texture = ExtResource("16_1kdj7")
 
 [node name="BatLeft1" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(831, 1538)
-texture = ExtResource("17_thyok")
+texture = SubResource("CompressedTexture2D_drb12")
 
 [node name="BatLeft2" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(1041, 1415)
-texture = ExtResource("17_thyok")
+texture = SubResource("CompressedTexture2D_drb12")

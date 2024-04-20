@@ -36,7 +36,8 @@ func Update(_delta: float):
 			MusicPlayer.stream = load("res://assets/audio/music/Fly - Title Screen.mp3")
 			MusicPlayer.play()
 			end.emit("endcredit")
-			#SceneChanger.change_scene("res://levels/level_1.tscn")
+			await DialogueManager.dialogue_ended
+			SceneChanger.change_scene("res://menu/credits_screen.tscn")
 
 func Physics_Update(_delta: float):
 	if contact and not defeated:

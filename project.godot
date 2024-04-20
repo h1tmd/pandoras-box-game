@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="pandoras-box-game"
-run/main_scene="res://levels/level_1.tscn"
+run/main_scene="res://menu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
@@ -31,6 +31,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="canvas_items"
+
+[editor]
+
+import/reimport_missing_imported_files=false
 
 [editor_plugins]
 

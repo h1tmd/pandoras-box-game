@@ -1,33 +1,33 @@
 [gd_scene load_steps=52 format=3 uid="uid://b2nnoptmjkqr1"]
 
 [ext_resource type="Script" path="res://menu/main_menu.gd" id="1_wbdx6"]
-[ext_resource type="Texture2D" path="res://Assets/FOREST.png" id="2_jbi6u"]
-[ext_resource type="Texture2D" path="res://Assets/Text/Pandora’s Box (29.7 x 21 cm).png" id="3_m4tv2"]
-[ext_resource type="Texture2D" path="res://Assets/anim/3.png" id="4_jr5yr"]
-[ext_resource type="Texture2D" path="res://Assets/anim/0.png" id="4_r2y2i"]
-[ext_resource type="Texture2D" path="res://Assets/Text/2.png" id="4_s0gcf"]
-[ext_resource type="Texture2D" path="res://Assets/anim/4.png" id="5_ilm7i"]
-[ext_resource type="Texture2D" path="res://Assets/Text/4.png" id="6_qre81"]
-[ext_resource type="Texture2D" path="res://Assets/anim/5.png" id="6_xxxkp"]
-[ext_resource type="Texture2D" path="res://Assets/Text/5.png" id="7_8b6nu"]
-[ext_resource type="Texture2D" path="res://Assets/anim/6.png" id="7_dpree"]
-[ext_resource type="Texture2D" path="res://Assets/anim/7.png" id="8_xkvv0"]
-[ext_resource type="Texture2D" path="res://Assets/anim/8.png" id="9_ap4hv"]
-[ext_resource type="Texture2D" path="res://Assets/anim/9.png" id="10_gjwly"]
-[ext_resource type="Texture2D" path="res://Assets/anim/10.png" id="11_p4bqr"]
-[ext_resource type="Texture2D" path="res://Assets/anim/11.png" id="12_b6rko"]
-[ext_resource type="Texture2D" path="res://Assets/anim/12.png" id="13_qb0fy"]
-[ext_resource type="Texture2D" path="res://Assets/anim/13.png" id="14_0jmgb"]
-[ext_resource type="Texture2D" path="res://Assets/anim/14.png" id="15_a86g7"]
-[ext_resource type="Texture2D" path="res://Assets/anim/15.png" id="16_xpur5"]
-[ext_resource type="Texture2D" path="res://Assets/anim/16.png" id="17_raibi"]
-[ext_resource type="Texture2D" path="res://Assets/anim/17.png" id="18_cg4tw"]
-[ext_resource type="Texture2D" path="res://Assets/anim/18.png" id="19_htieo"]
-[ext_resource type="Texture2D" path="res://Assets/anim/19.png" id="20_dp1cl"]
-[ext_resource type="Texture2D" path="res://Assets/anim/20.png" id="21_f1i0y"]
-[ext_resource type="Texture2D" path="res://Assets/anim/22.png" id="22_8rjua"]
-[ext_resource type="Texture2D" path="res://Assets/anim/23.png" id="23_1jl1a"]
-[ext_resource type="Texture2D" path="res://Assets/anim/24.png" id="24_0vsnt"]
+[ext_resource type="Texture2D" uid="uid://cimg7hofjvvej" path="res://assets/environment/bg_forest.png" id="2_jbi6u"]
+[ext_resource type="Texture2D" uid="uid://dwrxqki1psx21" path="res://assets/text/Pandora’s Box (29.7 x 21 cm).png" id="3_m4tv2"]
+[ext_resource type="Texture2D" uid="uid://liyp4p06ici3" path="res://assets/menu_animation/3.png" id="4_jr5yr"]
+[ext_resource type="Texture2D" uid="uid://qqu2x1ye4wgp" path="res://assets/menu_animation/0.png" id="4_r2y2i"]
+[ext_resource type="Texture2D" uid="uid://cgtbnph62kgu" path="res://assets/text/2.png" id="4_s0gcf"]
+[ext_resource type="Texture2D" uid="uid://dx6nsfdv02u2u" path="res://assets/menu_animation/4.png" id="5_ilm7i"]
+[ext_resource type="Texture2D" uid="uid://d2ispinoxallm" path="res://assets/text/4.png" id="6_qre81"]
+[ext_resource type="Texture2D" uid="uid://dj2tsc2ej805s" path="res://assets/menu_animation/5.png" id="6_xxxkp"]
+[ext_resource type="Texture2D" uid="uid://bopayyl73tx2k" path="res://assets/text/5.png" id="7_8b6nu"]
+[ext_resource type="Texture2D" uid="uid://kux52iq4j88s" path="res://assets/menu_animation/6.png" id="7_dpree"]
+[ext_resource type="Texture2D" uid="uid://b6p4v3pq3isuw" path="res://assets/menu_animation/7.png" id="8_xkvv0"]
+[ext_resource type="Texture2D" uid="uid://4ax5ca2pqh5o" path="res://assets/menu_animation/8.png" id="9_ap4hv"]
+[ext_resource type="Texture2D" uid="uid://nuymrqj4idxy" path="res://assets/menu_animation/9.png" id="10_gjwly"]
+[ext_resource type="Texture2D" uid="uid://cfewl6fws0lri" path="res://assets/menu_animation/10.png" id="11_p4bqr"]
+[ext_resource type="Texture2D" uid="uid://doj7efbvi1y74" path="res://assets/menu_animation/11.png" id="12_b6rko"]
+[ext_resource type="Texture2D" uid="uid://dkjobqu2uaon5" path="res://assets/menu_animation/12.png" id="13_qb0fy"]
+[ext_resource type="Texture2D" uid="uid://c6rr21cwxcw3t" path="res://assets/menu_animation/13.png" id="14_0jmgb"]
+[ext_resource type="Texture2D" uid="uid://h4u8ftar2qvl" path="res://assets/menu_animation/14.png" id="15_a86g7"]
+[ext_resource type="Texture2D" uid="uid://c4dhumkb5csqu" path="res://assets/menu_animation/15.png" id="16_xpur5"]
+[ext_resource type="Texture2D" uid="uid://dya6o50i5hltd" path="res://assets/menu_animation/16.png" id="17_raibi"]
+[ext_resource type="Texture2D" uid="uid://db20oakafnld5" path="res://assets/menu_animation/17.png" id="18_cg4tw"]
+[ext_resource type="Texture2D" uid="uid://cve8o7fpg1si0" path="res://assets/menu_animation/18.png" id="19_htieo"]
+[ext_resource type="Texture2D" uid="uid://dtajeun124meo" path="res://assets/menu_animation/19.png" id="20_dp1cl"]
+[ext_resource type="Texture2D" uid="uid://dm53ax373r2hs" path="res://assets/menu_animation/20.png" id="21_f1i0y"]
+[ext_resource type="Texture2D" uid="uid://dt3pj2plyqqcy" path="res://assets/menu_animation/22.png" id="22_8rjua"]
+[ext_resource type="Texture2D" uid="uid://c8kf8dqwhtx4j" path="res://assets/menu_animation/23.png" id="23_1jl1a"]
+[ext_resource type="Texture2D" uid="uid://cg4dd4a71kusr" path="res://assets/menu_animation/24.png" id="24_0vsnt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yfrpy"]
 atlas = ExtResource("4_r2y2i")
@@ -263,6 +263,7 @@ animations = [{
 }]
 
 [node name="main_menu" type="Node2D"]
+scale = Vector2(1.6, 1.6)
 script = ExtResource("1_wbdx6")
 
 [node name="background" type="Node2D" parent="."]
@@ -287,6 +288,7 @@ texture = ExtResource("3_m4tv2")
 [node name="buttons" type="Node" parent="."]
 
 [node name="start" type="Node2D" parent="buttons"]
+position = Vector2(357, 214)
 
 [node name="start_button" type="Button" parent="buttons/start"]
 self_modulate = Color(1, 1, 1, 0)
@@ -303,6 +305,7 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_s0gcf")
 
 [node name="credits" type="Node2D" parent="buttons"]
+position = Vector2(357, 280)
 
 [node name="credits_button" type="Button" parent="buttons/credits"]
 self_modulate = Color(1, 1, 1, 0)
@@ -319,6 +322,7 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("6_qre81")
 
 [node name="quit" type="Node2D" parent="buttons"]
+position = Vector2(357, 322)
 
 [node name="quit_button" type="Button" parent="buttons/quit"]
 self_modulate = Color(1, 1, 1, 0)
@@ -336,7 +340,7 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_8b6nu")
 
 [node name="animation" type="Node2D" parent="."]
-position = Vector2(576, 278)
+position = Vector2(593.75, 278)
 scale = Vector2(0.4, 0.4)
 
 [node name="L_anim_start" type="AnimatedSprite2D" parent="animation"]

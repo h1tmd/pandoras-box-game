@@ -1,9 +1,16 @@
 extends Node2D
 
-var credits = preload("res://Levels/credits_screen.tscn")
+var credits = preload("res://menu/credits_screen.tscn")
+
+func _ready():
+	if not MusicPlayer.playing:
+		MusicPlayer.stream = load("res://assets/audio/music/Fly - Title Screen.mp3")
+		MusicPlayer.play()
 
 # start button
-func _on_start_button_pressed(): get_tree().change_scene_to_file("res://Levels/level_one.tscn")
+func _on_start_button_pressed(): 
+	SceneChanger.change_scene("res://levels/level_1.tscn")
+	MusicPlayer.stop()
 func _on_start_button_mouse_entered(): 
 	$buttons/start/start_sprite.scale = Vector2(0.35, 0.35)
 	$animation/L_anim_start.play("forwards")
@@ -14,7 +21,7 @@ func _on_start_button_mouse_exited():
 	$animation/R_anim_start.play("reverse")
 
 # credits button
-func _on_credits_button_pressed(): get_tree().change_scene_to_file("res://Levels/credits_screen.tscn")
+func _on_credits_button_pressed(): SceneChanger.change_scene("res://menu/credits_screen.tscn")
 func _on_credits_button_mouse_entered():
 	$buttons/credits/credits_sprite.scale = Vector2(0.35, 0.35)
 	$animation/L_anim_credits.play("forwards")
