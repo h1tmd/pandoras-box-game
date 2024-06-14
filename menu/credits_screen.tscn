@@ -1,22 +1,23 @@
-[gd_scene load_steps=20 format=3 uid="uid://bv7tkgex0huvc"]
+[gd_scene load_steps=21 format=3 uid="uid://bv7tkgex0huvc"]
 
 [ext_resource type="Script" path="res://menu/credits_screen.gd" id="1_8hjkc"]
-[ext_resource type="Texture2D" uid="uid://cmu2hnq37et4f" path="res://assets/credits/tile.png" id="1_rl6r3"]
+[ext_resource type="Texture2D" uid="uid://cmu2hnq37et4f" path="res://assets/tilesets/tile.png" id="1_rl6r3"]
 [ext_resource type="Texture2D" uid="uid://da3fbixsgsj8n" path="res://assets/text/ARTIST.png" id="2_y8j0x"]
 [ext_resource type="Texture2D" uid="uid://660samo5l8sb" path="res://assets/text/MUSIC.png" id="3_fh2vk"]
 [ext_resource type="Texture2D" uid="uid://be3nrp2qgvk38" path="res://assets/text/thanks.png" id="3_pxcod"]
 [ext_resource type="Texture2D" uid="uid://b6co13uk3j3oy" path="res://assets/text/REFERENCE.png" id="4_iyx8n"]
 [ext_resource type="Texture2D" uid="uid://by5w3vgo4ce87" path="res://assets/text/PROGRAMMERS.png" id="4_q0hdb"]
 [ext_resource type="Texture2D" uid="uid://dwrxqki1psx21" path="res://assets/text/Pandora’s Box (29.7 x 21 cm).png" id="8_fxnhi"]
-[ext_resource type="Texture2D" uid="uid://dhp60011prjk8" path="res://assets/credits/pandora.png" id="9_4qurf"]
-[ext_resource type="Texture2D" uid="uid://djsxscpojt4hu" path="res://assets/credits/slime.png" id="10_7ctx2"]
+[ext_resource type="Texture2D" uid="uid://dhp60011prjk8" path="res://assets/pandora/pandora.png" id="9_4qurf"]
+[ext_resource type="Texture2D" uid="uid://d22e20sqvciuw" path="res://assets/mobs/slime3.png" id="10_ue836"]
 [ext_resource type="Texture2D" uid="uid://bx1tk8assx2vp" path="res://assets/mobs/wisp4.png" id="11_5iykp"]
 [ext_resource type="Texture2D" uid="uid://dslnbjiego4f3" path="res://assets/npcs/janitor_idle1.png" id="12_j452d"]
 [ext_resource type="Texture2D" uid="uid://btkr8bkab5a2k" path="res://assets/npcs/farmer_idle1.png" id="13_ufunq"]
-[ext_resource type="Texture2D" uid="uid://drmnm1df7oswf" path="res://assets/credits/skeleton.png" id="14_pgyd6"]
+[ext_resource type="Texture2D" uid="uid://mwaqv8gwy7s1" path="res://assets/mobs/skeleton1.png" id="14_fn6jn"]
 [ext_resource type="Texture2D" uid="uid://cx8nsyvens3m0" path="res://assets/mobs/zombie1.png" id="15_ssw7c"]
 [ext_resource type="Texture2D" uid="uid://b2lpfbuvk8loo" path="res://assets/boss/boss.png" id="16_1kdj7"]
-[ext_resource type="Texture2D" uid="uid://bsjb8xl7bvbyw" path="res://assets/credits/bat.png" id="17_thyok"]
+[ext_resource type="Texture2D" uid="uid://dk76r43vkbx56" path="res://assets/mobs/bat1.png" id="17_jpuuj"]
+[ext_resource type="Texture2D" uid="uid://cqev5wmb4t1cx" path="res://assets/mobs/bat2.png" id="18_it4qk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjoco"]
 texture = ExtResource("1_rl6r3")
@@ -144,8 +145,7 @@ texture = ExtResource("9_4qurf")
 
 [node name="SlimeLeft3" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(131, 385)
-texture = ExtResource("10_7ctx2")
-flip_h = true
+texture = ExtResource("10_ue836")
 
 [node name="WispRight4" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(233, 237)
@@ -164,7 +164,7 @@ flip_h = true
 
 [node name="SkeletonLeft1" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(1041, 913)
-texture = ExtResource("14_pgyd6")
+texture = ExtResource("14_fn6jn")
 
 [node name="ZombieRight2" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(885, 999)
@@ -177,8 +177,10 @@ texture = ExtResource("16_1kdj7")
 
 [node name="BatLeft1" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(831, 1538)
-texture = ExtResource("17_thyok")
+texture = ExtResource("17_jpuuj")
+flip_h = true
 
 [node name="BatLeft2" type="Sprite2D" parent="roll_credits/sprites"]
 position = Vector2(1041, 1415)
-texture = ExtResource("17_thyok")
+texture = ExtResource("18_it4qk")
+flip_h = true

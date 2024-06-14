@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://ch1db62nb2qmc"]
+[gd_scene load_steps=14 format=3 uid="uid://ch1db62nb2qmc"]
 
 [ext_resource type="TileSet" uid="uid://cn3q8e2va34cj" path="res://others/tile_set.tres" id="1_7oen3"]
 [ext_resource type="Script" path="res://levels/level_2.gd" id="1_d14um"]
 [ext_resource type="Script" path="res://levels/tile_map2.gd" id="2_k68sl"]
 [ext_resource type="PackedScene" uid="uid://c7xc1uatkd4da" path="res://others/camera.tscn" id="3_3d5qc"]
 [ext_resource type="PackedScene" uid="uid://brn00c1uxs4nc" path="res://enemies/bat.tscn" id="5_1d2iw"]
+[ext_resource type="PackedScene" uid="uid://bfgv145urvdvs" path="res://others/pause_menu.tscn" id="5_6j1fm"]
 [ext_resource type="PackedScene" uid="uid://dhypdw1rucf46" path="res://characters/janitor.tscn" id="5_rhfcd"]
 [ext_resource type="PackedScene" uid="uid://b1ygqvanrtqr5" path="res://characters/pandora.tscn" id="6_i1r8e"]
 [ext_resource type="AudioStream" uid="uid://dh8bo6a65y26k" path="res://assets/audio/sfx/character_hurt.wav" id="6_y3rrp"]
@@ -32,6 +33,11 @@ script = ExtResource("2_k68sl")
 [node name="Camera2D" parent="." node_paths=PackedStringArray("Chara") instance=ExtResource("3_3d5qc")]
 process_callback = 0
 Chara = NodePath("../Pandora")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="Pause Menu" parent="Camera2D/CanvasLayer" instance=ExtResource("5_6j1fm")]
+visible = false
 
 [node name="Bat" parent="." instance=ExtResource("5_1d2iw")]
 position = Vector2(3178, 157)
@@ -74,6 +80,8 @@ centered = false
 stream = ExtResource("6_y3rrp")
 
 [connection signal="placed" from="Tile Map 2" to="Pandora" method="cast_spell"]
+[connection signal="exit" from="Camera2D/CanvasLayer/Pause Menu" to="." method="_on_pause_menu_exit"]
+[connection signal="unpause" from="Camera2D/CanvasLayer/Pause Menu" to="." method="pause_toggle"]
 [connection signal="collided" from="Bat" to="Tile Map 2" method="restart"]
 [connection signal="collided" from="Bat2" to="Tile Map 2" method="restart"]
 [connection signal="collided" from="Bat3" to="Tile Map 2" method="restart"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://4foe5fmf0404"]
+[gd_scene load_steps=25 format=3 uid="uid://4foe5fmf0404"]
 
 [ext_resource type="PackedScene" uid="uid://d0u6u3n32aony" path="res://enemies/boss.tscn" id="1_01phw"]
 [ext_resource type="Script" path="res://levels/level_3.gd" id="1_7l6hx"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://faiaftwam0c5" path="res://assets/audio/sfx/lava_level_ambience.mp3" id="15_s5xsd"]
 [ext_resource type="Texture2D" uid="uid://dydiugtwjs65d" path="res://assets/environment/bg_lava.png" id="16_efmnv"]
 [ext_resource type="AudioStream" uid="uid://dh8bo6a65y26k" path="res://assets/audio/sfx/character_hurt.wav" id="17_65ryf"]
+[ext_resource type="PackedScene" uid="uid://bfgv145urvdvs" path="res://others/pause_menu.tscn" id="18_ifg6e"]
 
 [sub_resource type="Animation" id="Animation_vwjvj"]
 length = 0.001
@@ -218,9 +219,16 @@ centered = false
 stream = ExtResource("17_65ryf")
 bus = &"SFX"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("18_ifg6e")]
+visible = false
+
 [connection signal="placed" from="TileMap" to="Pandora" method="cast_spell"]
 [connection signal="collided" from="Boss" to="TileMap" method="restart"]
 [connection signal="mushroom_contact" from="Boss" to="State Machine/dash" method="_on_boss_mushroom_contact"]
 [connection signal="fallen" from="Pandora" to="TileMap" method="restart"]
 [connection signal="collided" from="State Machine/spikes" to="TileMap" method="restart"]
 [connection signal="end" from="State Machine/dash" to="Pandora" method="prompt_dialogue"]
+[connection signal="exit" from="CanvasLayer/Pause Menu" to="." method="_on_pause_menu_exit"]
+[connection signal="unpause" from="CanvasLayer/Pause Menu" to="." method="pause_toggle"]

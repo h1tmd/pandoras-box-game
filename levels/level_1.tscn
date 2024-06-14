@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://tw2mxled0hrf"]
+[gd_scene load_steps=20 format=3 uid="uid://tw2mxled0hrf"]
 
 [ext_resource type="Texture2D" uid="uid://b1k0tjch3m5b7" path="res://assets/environment/dungeon_entrance.png" id="1_2f3va"]
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_i2o6v"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://p381gt84oydh" path="res://assets/environment/bg_forestlong.png" id="12_exre6"]
 [ext_resource type="AudioStream" uid="uid://cd5vicia8y525" path="res://assets/audio/sfx/forest_level_ambience.mp3" id="14_e4fqb"]
 [ext_resource type="AudioStream" uid="uid://dh8bo6a65y26k" path="res://assets/audio/sfx/character_hurt.wav" id="15_o4pn8"]
+[ext_resource type="PackedScene" uid="uid://bfgv145urvdvs" path="res://others/pause_menu.tscn" id="17_iuoyi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pe0om"]
 size = Vector2(517, 918)
@@ -24,6 +25,7 @@ size = Vector2(517, 918)
 size = Vector2(97.5, 987.5)
 
 [node name="Level 1" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_i2o6v")
 metadata/_edit_vertical_guides_ = [4055.0]
 
@@ -58,6 +60,11 @@ texture = ExtResource("5_ggmmd")
 [node name="Camera2D" parent="." node_paths=PackedStringArray("Chara") instance=ExtResource("4_q3a0r")]
 process_callback = 0
 Chara = NodePath("../Pandora")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="Pause Menu" parent="Camera2D/CanvasLayer" instance=ExtResource("17_iuoyi")]
+visible = false
 
 [node name="Random NPC" parent="." instance=ExtResource("2_8806b")]
 position = Vector2(2329, 571)
@@ -112,23 +119,26 @@ stream = ExtResource("15_o4pn8")
 bus = &"SFX"
 
 [node name="NPC Hint" type="RichTextLabel" parent="."]
-offset_left = 2192.0
-offset_top = 775.0
-offset_right = 2498.0
-offset_bottom = 818.0
+offset_left = 2154.0
+offset_top = 788.0
+offset_right = 2485.0
+offset_bottom = 936.0
 bbcode_enabled = true
-text = "[font_size=24][center]Press [ E ] to interact[/center]"
+text = "[font_size=40                  ][center]Press [ E ] to interact[/center]"
 
 [node name="Click Hint" type="RichTextLabel" parent="."]
-offset_left = 3862.0
-offset_top = 875.0
-offset_right = 4294.0
-offset_bottom = 914.0
+offset_left = 3830.0
+offset_top = 850.0
+offset_right = 4287.0
+offset_bottom = 972.0
+mouse_filter = 2
 bbcode_enabled = true
-text = "[font_size=20][center]Click on the ground to spawn a mushroom"
+text = "[font_size=40][center]Click on the ground to spawn a mushroom"
 
 [connection signal="body_entered" from="Dungeon/Area2D" to="Dungeon" method="_on_area_2d_body_entered"]
 [connection signal="placed" from="Tile Map 1" to="Pandora" method="cast_spell"]
+[connection signal="exit" from="Camera2D/CanvasLayer/Pause Menu" to="." method="_on_pause_menu_exit"]
+[connection signal="unpause" from="Camera2D/CanvasLayer/Pause Menu" to="." method="pause_toggle"]
 [connection signal="dialogue" from="Random NPC" to="Pandora" method="prompt_dialogue"]
 [connection signal="dialogue" from="Farmer" to="Pandora" method="prompt_dialogue"]
 [connection signal="collided" from="Goblin" to="Tile Map 1" method="restart"]
