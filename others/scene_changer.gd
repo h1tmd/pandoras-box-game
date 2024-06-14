@@ -11,6 +11,6 @@ func change_scene(path):
 	animation_player.play("fade")
 	scene_change_audio.play()
 	await animation_player.animation_finished
-	assert(get_tree().change_scene_to_file(path) == OK)
+	get_tree().change_scene_to_file(path)
 	animation_player.play_backwards("fade")
 	scene_changed.emit()
